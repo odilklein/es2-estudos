@@ -3,6 +3,14 @@ import { NavLink, Outlet, useLocation } from "react-router-dom";
 import { Icon } from "@iconify/react";
 import { modules } from "../data/modules.js";
 import PwaNotice, { OfflineBadge } from "./PwaNotice.jsx";
+import AudioProvider from "./AudioProvider.jsx";
+import { useAudio } from "../lib/audioContext.js";
+import MiniPlayer from "./MiniPlayer.jsx";
+
+function PlayerSpacer() {
+  const { active, collapsed } = useAudio();
+  return <div aria-hidden className={active ? (collapsed ? "h-28" : "h-56") : "h-0"} />;
+}
 
 const navBase =
   "flex items-center gap-2.5 rounded-xl px-3 py-2.5 text-sm font-medium transition active:scale-[0.98]";
@@ -74,7 +82,8 @@ export default function Layout() {
   const close = () => setOpen(false);
 
   return (
-    <div className="min-h-screen bg-slate-50">
+    <AudioProvider>
+      <div className="min-h-screen bg-slate-50">
       <header className="sticky top-0 z-40 border-b border-slate-200 bg-white/90 backdrop-blur">
         <div className="mx-auto flex max-w-7xl items-center gap-3 px-4 py-2.5">
           <button
@@ -118,7 +127,10 @@ export default function Layout() {
         </main>
       </div>
 
+      <PlayerSpacer />
+      <MiniPlayer />
       <PwaNotice />
-    </div>
+      </div>
+    </AudioProvider>
   );
 }

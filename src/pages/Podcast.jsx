@@ -1,21 +1,13 @@
-import { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { Icon } from "@iconify/react";
-import AudioPlayer from "react-h5-audio-player";
-import "react-h5-audio-player/lib/styles.css";
-import podcastUml from "../../Por_que_todo_software_precisa_de_UML.m4a";
+import { useAudio } from "../lib/audioContext.js";
+import { formatTime } from "../lib/podcastProgress.js";
 
 const speeds = [1, 1.25, 1.5, 2];
 
 export default function Podcast() {
-  const playerRef = useRef(null);
-  const [speed, setSpeed] = useState(1);
-
-  function changeSpeed(value) {
-    setSpeed(value);
-    const audio = playerRef.current?.audio?.current;
-    if (audio) audio.playbackRate = value;
-  }
+  const { toggle, playing, rate, setRate, savedPosition, active } = useAudio();
+  const resume = savedPosition > 5;
 
   return (
     <div className="space-y-8">
@@ -44,18 +36,32 @@ export default function Podcast() {
         </div>
       </header>
 
-      <section className="rounded-2xl border border-slate-200 bg-white p-3 shadow-soft sm:p-5">
-        <AudioPlayer
-          ref={playerRef}
-          src={podcastUml}
-          preload="metadata"
-          showSkipControls={false}
-          showJumpControls
-          showFilledVolume
-          hasDefaultKeyBindings
-        />
+      <section className="rounded-2xl border border-slate-200 bg-white p-4 shadow-soft sm:p-6">
+        <div className="flex items-center gap-4">
+          <button
+            onClick={toggle}
+            aria-label={playing ? "Pausar" : "Reproduzir"}
+            className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-brand-600 text-white shadow-soft hover:bg-brand-700 active:scale-95"
+          >
+            <Icon icon={playing ? "mdi:pause" : "mdi:play"} width={30} />
+          </button>
+          <div className="min-w-0">
+            <p className="font-semibold text-slate-900">
+              {playing
+                ? "Reproduzindo"
+                : resume
+                  ? `Retomar de ${formatTime(savedPosition)}`
+                  : active
+                    ? "Continuar"
+                    : "Ouvir agora"}
+            </p>
+            <p className="mt-0.5 text-sm text-slate-600">
+              O player fica no rodapé e continua tocando ao trocar de página.
+            </p>
+          </div>
+        </div>
 
-        <div className="mt-4 flex flex-wrap items-center gap-2">
+        <div className="mt-5 flex flex-wrap items-center gap-2">
           <span className="flex items-center gap-1.5 text-sm font-semibold text-slate-600">
             <Icon icon="mdi:speedometer" width={16} />
             Velocidade
@@ -63,9 +69,9 @@ export default function Podcast() {
           {speeds.map((s) => (
             <button
               key={s}
-              onClick={() => changeSpeed(s)}
+              onClick={() => setRate(s)}
               className={`rounded-lg px-3 py-1.5 text-sm font-semibold transition active:scale-95 ${
-                speed === s
+                rate === s
                   ? "bg-brand-600 text-white"
                   : "border border-slate-200 bg-white text-slate-600 hover:text-brand-700"
               }`}
@@ -74,6 +80,13 @@ export default function Podcast() {
             </button>
           ))}
         </div>
+
+        {resume && !playing && (
+          <p className="mt-3 flex items-center gap-1.5 rounded-lg bg-brand-50 px-3 py-2 text-xs text-brand-800">
+            <Icon icon="mdi:history" width={15} />
+            Você parou em {formatTime(savedPosition)}. Toque em play para continuar de onde parou.
+          </p>
+        )}
       </section>
 
       <section className="card">
@@ -96,8 +109,8 @@ export default function Podcast() {
           ))}
         </ul>
         <p className="mt-3 text-xs text-slate-500">
-          Tópicos relacionados ao Módulo 1. Ajuste a velocidade e use os controles de avançar e
-          retroceder durante a revisão.
+          Tópicos relacionados ao Módulo 1. Use os controles do rodapé para avançar, retroceder e
+          ajustar a velocidade. Sua posição fica salva para a próxima visita.
         </p>
       </section>
     </div>

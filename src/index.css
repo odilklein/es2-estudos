@@ -108,6 +108,25 @@
   outline-offset: 2px;
 }
 
+/* Mini-player no rodapé */
+.mini-player .rhap_container {
+  padding: 8px 6px 0;
+}
+.mini-player .rhap_progress-section {
+  margin: 0;
+}
+.mini-player .rhap_time {
+  font-size: 12px;
+}
+@media (max-width: 640px) {
+  .mini-player .rhap_volume-container {
+    display: none;
+  }
+  .mini-player .rhap_additional-controls {
+    display: none;
+  }
+}
+
 @keyframes slide-up {
   from {
     opacity: 0;

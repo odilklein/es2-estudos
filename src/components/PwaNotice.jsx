@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Icon } from "@iconify/react";
+import { useAudio } from "../lib/audioContext.js";
 
 const DISMISS_KEY = "es2-offline-notice-dismissed";
 
@@ -43,6 +44,7 @@ export function OfflineBadge() {
 }
 
 export default function PwaNotice() {
+  const { active, collapsed } = useAudio();
   const [visible, setVisible] = useState(() => {
     try {
       if (localStorage.getItem(DISMISS_KEY) === "1") return false;
@@ -93,10 +95,12 @@ export default function PwaNotice() {
 
   if (!visible) return null;
 
+  const bottomRem = active ? (collapsed ? 5.5 : 14) : 0.75;
+
   return (
     <div
       className="pointer-events-none fixed inset-x-3 z-40 flex justify-end sm:inset-x-auto sm:right-5"
-      style={{ bottom: "calc(env(safe-area-inset-bottom, 0px) + 0.75rem)" }}
+      style={{ bottom: `calc(env(safe-area-inset-bottom, 0px) + ${bottomRem}rem)` }}
     >
       <div className="pointer-events-auto w-full max-w-md animate-slide-up rounded-2xl border border-brand-200 bg-white p-3.5 shadow-soft">
         <div className="flex items-start gap-3">
