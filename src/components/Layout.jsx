@@ -2,6 +2,7 @@ import { useState } from "react";
 import { NavLink, Outlet, useLocation } from "react-router-dom";
 import { Icon } from "@iconify/react";
 import { modules } from "../data/modules.js";
+import PwaNotice, { OfflineBadge } from "./PwaNotice.jsx";
 
 const navBase =
   "flex items-center gap-2.5 rounded-xl px-3 py-2.5 text-sm font-medium transition active:scale-[0.98]";
@@ -42,6 +43,9 @@ function SidebarContent({ onNavigate }) {
       </NavItem>
       <NavItem to="/simulado" icon="mdi:clipboard-check-outline" onClick={onNavigate}>
         Simulado
+      </NavItem>
+      <NavItem to="/offline" icon="mdi:wifi-off" onClick={onNavigate}>
+        Modo offline
       </NavItem>
 
       <p className="px-3 pb-1 pt-4 text-xs font-bold uppercase tracking-wider text-slate-400">
@@ -89,6 +93,9 @@ export default function Layout() {
               <span className="block text-[11px] text-slate-500">Plataforma de estudos</span>
             </span>
           </NavLink>
+          <div className="ml-auto">
+            <OfflineBadge />
+          </div>
         </div>
       </header>
 
@@ -110,6 +117,8 @@ export default function Layout() {
           <Outlet />
         </main>
       </div>
+
+      <PwaNotice />
     </div>
   );
 }

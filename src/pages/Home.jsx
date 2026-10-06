@@ -122,6 +122,28 @@ export default function Home() {
       </section>
 
       <section>
+        <Link
+          to="/offline"
+          className="card group flex flex-col gap-3 hover:border-brand-300 hover:shadow-soft sm:flex-row sm:items-center sm:justify-between"
+        >
+          <div className="flex items-center gap-3">
+            <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-brand-50 text-brand-600">
+              <Icon icon="mdi:wifi-off" width={24} />
+            </span>
+            <div>
+              <h2 className="text-lg font-bold text-slate-900">Funciona sem internet</h2>
+              <p className="text-sm text-slate-600">
+                Instale na tela inicial e estude no modo offline.
+              </p>
+            </div>
+          </div>
+          <span className="flex items-center gap-1 text-sm font-semibold text-brand-600">
+            Como instalar <Icon icon="mdi:arrow-right" width={16} />
+          </span>
+        </Link>
+      </section>
+
+      <section>
         <h2 className="section-title">Estratégia de prova</h2>
         <div className="mt-4 grid gap-4 sm:grid-cols-2">
           {examTips.map((t) => (
