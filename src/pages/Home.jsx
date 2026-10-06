@@ -15,7 +15,7 @@ export default function Home() {
           Revisão para a prova
         </p>
         <h1 className="mt-2 text-2xl font-bold leading-tight sm:text-4xl">
-          Engenharia de Software 2 — do zero à prova
+          Engenharia de Software 2: do zero à prova
         </h1>
         <p className="mt-3 max-w-2xl text-sm text-brand-50/90 sm:text-base">
           Teoria explicada, resumos de véspera, diagramas interativos e banco de questões
@@ -77,6 +77,48 @@ export default function Home() {
             </Link>
           ))}
         </div>
+      </section>
+
+      <section>
+        <Link
+          to="/diagramas"
+          className="card group flex flex-col gap-3 hover:border-brand-300 hover:shadow-soft sm:flex-row sm:items-center sm:justify-between"
+        >
+          <div className="flex items-center gap-3">
+            <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-brand-50 text-brand-600">
+              <Icon icon="mdi:chart-box-outline" width={24} />
+            </span>
+            <div>
+              <h2 className="text-lg font-bold text-slate-900">Guia de diagramas</h2>
+              <p className="text-sm text-slate-600">
+                Os 9 diagramas de UML e BPMN, com quando usar cada um e exemplos.
+              </p>
+            </div>
+          </div>
+          <span className="flex items-center gap-1 text-sm font-semibold text-brand-600">
+            Abrir guia <Icon icon="mdi:arrow-right" width={16} />
+          </span>
+        </Link>
+      </section>
+
+      <section>
+        <Link
+          to="/podcast"
+          className="card group flex flex-col gap-3 hover:border-brand-300 hover:shadow-soft sm:flex-row sm:items-center sm:justify-between"
+        >
+          <div className="flex items-center gap-3">
+            <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-brand-50 text-brand-600">
+              <Icon icon="mdi:headphones" width={24} />
+            </span>
+            <div>
+              <h2 className="text-lg font-bold text-slate-900">Podcast: por que todo software precisa de UML</h2>
+              <p className="text-sm text-slate-600">Áudio de cerca de 28 min com controle de velocidade.</p>
+            </div>
+          </div>
+          <span className="flex items-center gap-1 text-sm font-semibold text-brand-600">
+            Ouvir <Icon icon="mdi:play" width={16} />
+          </span>
+        </Link>
       </section>
 
       <section>

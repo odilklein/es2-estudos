@@ -67,7 +67,7 @@ export function MCQ({ questions }) {
                 />
                 <span>
                   <strong className="block">
-                    {choice === item.answer ? "Correto!" : `Incorreto — resposta: ${letters[item.answer]}`}
+                    {choice === item.answer ? "Correto!" : `Incorreto. Resposta: ${letters[item.answer]}`}
                   </strong>
                   <Rich>{item.explain}</Rich>
                 </span>

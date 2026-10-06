@@ -19,12 +19,12 @@ export const module2 = {
         "Reconhecer símbolos: evento de início (círculo fino), intermediário (duplo), fim (grosso).",
       ],
     },
-    { type: "h2", text: "1. BPM — Gerenciamento de Processos de Negócio" },
+    { type: "h2", text: "1. BPM: Gerenciamento de Processos de Negócio" },
     {
       type: "p",
       text: "**BPM** (Business Process Management) reúne técnicas e ferramentas para **analisar, modelar, publicar, executar e melhorar** processos organizacionais. O ciclo de vida clássico passa por modelagem → implantação → monitoramento → otimização.",
     },
-    { type: "h2", text: "2. BPMN — a notação" },
+    { type: "h2", text: "2. BPMN: a notação" },
     {
       type: "p",
       text: "**BPMN** (Business Process Model and Notation) é um **padrão gráfico internacional intuitivo** criado para **facilitar o entendimento** entre técnicos e pessoas de negócio. É hoje mantido pela OMG (a mesma organização da UML).",
@@ -54,7 +54,7 @@ export const module2 = {
       type: "callout",
       variant: "warn",
       title: "Convenção de tamanho x espessura",
-      text: "Atenção: no BPMN a **espessura da borda** do círculo distingue os eventos (fina = início, dupla = intermediário, grossa = fim). O **tamanho** do círculo não importa — a espessura sim.",
+      text: "Atenção: no BPMN a **espessura da borda** do círculo distingue os eventos (fina = início, dupla = intermediário, grossa = fim). O **tamanho** do círculo não importa; o que importa é a espessura.",
     },
     { type: "h3", text: "Gateways (desvios)" },
     {

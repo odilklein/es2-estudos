@@ -31,6 +31,12 @@ function SidebarContent({ onNavigate }) {
       <NavItem to="/" end icon="mdi:home-variant-outline" onClick={onNavigate}>
         Página inicial
       </NavItem>
+      <NavItem to="/diagramas" icon="mdi:chart-box-outline" onClick={onNavigate}>
+        Guia de diagramas
+      </NavItem>
+      <NavItem to="/podcast" icon="mdi:headphones" onClick={onNavigate}>
+        Podcast
+      </NavItem>
       <NavItem to="/dicas" icon="mdi:lightbulb-on-outline" onClick={onNavigate}>
         Dicas de prova
       </NavItem>
@@ -50,7 +56,7 @@ function SidebarContent({ onNavigate }) {
       <div className="mt-auto flex items-start gap-2 rounded-xl bg-slate-100 p-3 text-xs text-slate-500">
         <Icon icon="mdi:information-outline" width={16} className="mt-0.5 shrink-0" />
         <span>
-          Material de <strong className="text-slate-700">Engenharia de Software 2</strong> — teoria,
+          Material de <strong className="text-slate-700">Engenharia de Software 2</strong>: teoria,
           resumos, diagramas e questões.
         </span>
       </div>

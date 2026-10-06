@@ -4,12 +4,12 @@ import { modules, examTips } from "../data/modules.js";
 import Rich from "../components/Rich.jsx";
 
 const quickRef = [
-  ["UML", "M1", "Linguagem visual de modelagem — não é linguagem de programação."],
+  ["UML", "M1", "Linguagem visual de modelagem; não é linguagem de programação."],
   ["3 diagramas-base", "M1", "Casos de Uso (externo), Classes (estático), Sequência (dinâmico)."],
   ["«include»", "M1", "Execução obrigatória (base → incluído)."],
   ["«extend»", "M1", "Execução opcional/condicional (extensão → base)."],
-  ["Agregação ◇", "M1", "Todo-parte fraco; a parte sobrevive. Ex.: Funcionário–Endereço."],
-  ["Composição ◆", "M1", "Todo-parte forte; a parte morre com o todo. Ex.: Conta–Titular."],
+  ["Agregação ◇", "M1", "Todo-parte fraco; a parte sobrevive. Ex.: Funcionário e Endereço."],
+  ["Composição ◆", "M1", "Todo-parte forte; a parte morre com o todo. Ex.: Conta e Titular."],
   ["`+` / `#` / `-`", "M1", "Público / protegido / privado."],
   ["Análise gramatical", "M1", "Substantivo → classe/atributo; verbo → método; adjetivo → tipo."],
   ["Multiplicidade", "M1", "`1`, `0..1`, `1..*`, `0..*`, `m..n`."],

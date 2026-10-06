@@ -54,7 +54,7 @@ export const module1 = {
     { type: "h2", text: "2. O que é a UML?" },
     {
       type: "p",
-      text: "A **UML (Unified Modeling Language / Linguagem de Modelagem Unificada)** é uma linguagem **visual de propósito geral**, aplicável a todos os domínios. Atenção: **UML não é linguagem de programação** — é uma linguagem de **modelagem**.",
+      text: "A **UML (Unified Modeling Language / Linguagem de Modelagem Unificada)** é uma linguagem **visual de propósito geral** de **modelagem**, aplicável a todos os domínios. Ela descreve o sistema, e não substitui uma linguagem de programação.",
     },
     {
       type: "p",
@@ -103,7 +103,7 @@ export const module1 = {
     },
     {
       type: "mermaid",
-      caption: "Casos de Uso — visão geral com include, extend e herança de ator.",
+      caption: "Casos de Uso: visão geral com include, extend e herança de ator.",
       code: `flowchart TB
     Cliente["Ator: Cliente"]
     VIP["Ator: Cliente VIP"]
@@ -343,7 +343,7 @@ export const module1 = {
       items: [
         "**Máquina de Estados:** comportamento de um elemento por **transições entre estados finitos** (evento → transição → novo estado).",
         "**Atividades:** fluxo de passos, semelhante a fluxograma/algoritmo; modela **paralelismo**.",
-        "**Pacotes:** divisão lógica em camadas — Visão, Controle, Domínio e Persistência.",
+        "**Pacotes:** divisão lógica em camadas (Visão, Controle, Domínio e Persistência).",
         "**Componentes:** estrutura física/lógica dos módulos, bibliotecas e executáveis.",
         "**Implantação:** mapeamento físico de hardware, servidores e nós.",
       ],
@@ -422,7 +422,7 @@ export const module1 = {
     {
       title: "UML",
       items: [
-        "Linguagem **visual de modelagem** — **não** é linguagem de programação.",
+        "Linguagem visual de modelagem; não é linguagem de programação.",
         "Define requisitos, comportamento, estrutura, processos e implantação.",
         "3 fundamentais: **Casos de Uso, Classes e Sequência**.",
       ],
@@ -475,7 +475,7 @@ export const module1 = {
     UC3 -.->|extend| UC1`,
     },
     {
-      title: "Classes — Biblioteca",
+      title: "Classes: Biblioteca",
       description: "Herança, associação e agregação.",
       code: `classDiagram
     class Funcionario { +String nome +String cpf }
@@ -487,7 +487,7 @@ export const module1 = {
     Bibliotecario "1" --> "0..*" Livro : cadastra`,
     },
     {
-      title: "Sequência — Empréstimo",
+      title: "Sequência: Empréstimo",
       description: "Interação dinâmica entre objetos.",
       code: `sequenceDiagram
     actor U as Usuário
@@ -502,7 +502,7 @@ export const module1 = {
     UI-->>U: registrado`,
     },
     {
-      title: "Máquina de Estados — Pagamento",
+      title: "Máquina de Estados: Pagamento",
       description: "Ciclo de vida de uma transação.",
       code: `stateDiagram-v2
     [*] --> Pendente
@@ -572,7 +572,7 @@ export const module1 = {
         ],
         answer: 1,
         explain:
-          "A UML é uma **linguagem de modelagem** visual de propósito geral — não é linguagem de programação nem metodologia.",
+          "A UML é uma linguagem de modelagem visual de propósito geral, e não uma linguagem de programação nem uma metodologia.",
       },
       {
         q: "Assinale o exemplo típico de relação de COMPOSIÇÃO:",
@@ -584,7 +584,7 @@ export const module1 = {
         ],
         answer: 1,
         explain:
-          "Na composição o tempo de vida é compartilhado: sem a **ContaComum**, o papel de **Titular** deixa de existir. Funcionário–Endereço é o exemplo de agregação fraca.",
+          "Na composição o tempo de vida é compartilhado: sem a **ContaComum**, o papel de **Titular** deixa de existir. Funcionário e Endereço é o exemplo de agregação fraca.",
       },
     ],
     discursive: [
@@ -611,11 +611,11 @@ export const module1 = {
       {
         q: "Diferencie agregação de composição, usando os exemplos da disciplina.",
         answer:
-          "Ambas são todo-parte. Na agregação (losango vazio) a parte existe independentemente do todo e pode pertencer a vários todos — ex.: Endereço existe sem o Funcionário; pode até ser modelada como associação simples. Na composição (losango cheio) a parte pertence a um único todo e compartilha seu tempo de vida — ex.: o Titular só existe se a ContaComum existir.",
+          "Ambas são todo-parte. Na agregação (losango vazio) a parte existe independentemente do todo e pode pertencer a vários todos. Ex.: Endereço existe sem o Funcionário, e pode até ser modelada como associação simples. Na composição (losango cheio) a parte pertence a um único todo e compartilha seu tempo de vida. Ex.: o Titular só existe se a ContaComum existir.",
         topics: [
           "Agregação fraca; Composição forte.",
           "Tempo de vida / exclusividade.",
-          "Exemplos Endereço–Funcionário e Titular–Conta.",
+          "Exemplos: Endereço e Funcionário; Titular e Conta.",
         ],
       },
       {

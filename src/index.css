@@ -75,3 +75,35 @@
   height: auto;
   max-width: none;
 }
+
+/* react-h5-audio-player themed to the site palette */
+.rhap_container {
+  background: transparent;
+  box-shadow: none;
+  padding: 0;
+}
+.rhap_main-controls-button,
+.rhap_volume-button,
+.rhap_repeat-button {
+  color: theme("colors.brand.600");
+}
+.rhap_progress-bar,
+.rhap_volume-bar {
+  background-color: theme("colors.slate.200");
+}
+.rhap_progress-filled,
+.rhap_volume-indicator {
+  background-color: theme("colors.brand.500");
+}
+.rhap_progress-indicator {
+  background: theme("colors.brand.600");
+  box-shadow: none;
+}
+.rhap_time {
+  color: theme("colors.slate.500");
+}
+.rhap_progress-container:focus-visible,
+.rhap_main-controls-button:focus-visible {
+  outline: 2px solid theme("colors.brand.500");
+  outline-offset: 2px;
+}

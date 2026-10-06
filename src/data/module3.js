@@ -37,16 +37,16 @@ export const module3 = {
       title: "Não é \"não\" aos itens da direita",
       text: "O Manifesto diz que, embora os itens à direita tenham valor, os da **esquerda valem mais**. Não significa ignorar processos ou documentação.",
     },
-    { type: "h2", text: "1. DSDM — Dynamic Systems Development Method" },
+    { type: "h2", text: "1. DSDM: Dynamic Systems Development Method" },
     { type: "p", text: "Foco em **desenvolvimento iterativo e incremental** com **participação ativa do usuário**. O tempo é fixo e o escopo é ajustável." },
     { type: "h3", text: "Priorização MoSCoW" },
     {
       type: "table",
       headers: ["Letra", "Categoria", "Significado"],
       rows: [
-        ["**M**", "Must have", "**Obrigatório** — sem isso não há entrega."],
+        ["**M**", "Must have", "**Obrigatório**: sem isso não há entrega."],
         ["**S**", "Should have", "**Importante**, mas contornável."],
-        ["**C**", "Could have", "**Desejável** — só se sobrar tempo."],
+        ["**C**", "Could have", "**Desejável**: só se sobrar tempo."],
         ["**W**", "Won't have", "**Fora do escopo** atual (mas pode voltar)."],
       ],
     },
@@ -64,7 +64,7 @@ export const module3 = {
     { type: "keyvals",
       items: [
         { k: "Quadro visual", v: "Colunas típicas: **A Fazer → Em progresso → Concluído**." },
-        { k: "Limite de WIP", v: "Work In Progress — limita quantos itens ficam abertos por etapa." },
+        { k: "Limite de WIP", v: "Work In Progress: limita quantos itens ficam abertos por etapa." },
         { k: "Sistema puxado (pull)", v: "Novo trabalho só puxado quando há capacidade livre, evitando gargalos." },
         { k: "Vantagens", v: "Flexibilidade contínua e redução de reuniões desnecessárias." },
       ],
@@ -81,11 +81,11 @@ export const module3 = {
       text: "Lean (enxuto) é sobre entregar valor eliminando **desperdício**. Cinco princípios:",
     },
     { type: "ol", items: [
-      "**Valor** — definido sob a ótica do cliente.",
-      "**Mapeamento do fluxo de valor** — enxergar todas as etapas.",
-      "**Fluxo contínuo** — fazer o trabalho andar sem interrupções.",
-      "**Produção puxada** — produzir conforme a demanda.",
-      "**Melhoria contínua (Kaizen)** — aperfeiçoamento constante.",
+      "**Valor**: definido sob a ótica do cliente.",
+      "**Mapeamento do fluxo de valor**: enxergar todas as etapas.",
+      "**Fluxo contínuo**: fazer o trabalho andar sem interrupções.",
+      "**Produção puxada**: produzir conforme a demanda.",
+      "**Melhoria contínua (Kaizen)**: aperfeiçoamento constante.",
     ]},
     { type: "h3", text: "Desperdícios a eliminar" },
     { type: "ul", items: [
@@ -146,7 +146,7 @@ export const module3 = {
     {
       type: "keyvals",
       items: [
-        { k: "Não linearidade", v: "Pequenas ações podem gerar grandes impactos — e vice-versa." },
+        { k: "Não linearidade", v: "Pequenas ações podem gerar grandes impactos, e vice-versa." },
         { k: "Comportamento emergente", v: "Os resultados surgem da interação entre pessoas e módulos." },
         { k: "Adaptabilidade", v: "Os agentes ajustam-se continuamente às mudanças do ambiente." },
         { k: "Limite do caos", v: "O desempenho ideal ocorre na zona de equilíbrio entre a **rigidez burocrática** e o **caos descontrolado**." },
@@ -196,10 +196,10 @@ export const module3 = {
       type: "callout",
       variant: "info",
       title: "Lição do estudo de caso",
-      text: "O problema não invalidou a solução: o ciclo **Aprender** revelou que a escolha de infraestrutura deve ser validada conforme o ambiente. É exatamente a lógica do ASD — adaptar a direção a partir do aprendizado.",
+      text: "O problema não invalidou a solução: o ciclo **Aprender** revelou que a escolha de infraestrutura deve ser validada conforme o ambiente. É a lógica do ASD: adaptar a direção a partir do aprendizado.",
     },
 
-    { type: "h2", text: "6. Quadro comparativo — UML x ASD" },
+    { type: "h2", text: "6. Quadro comparativo: UML x ASD" },
     {
       type: "table",
       headers: ["Dimensão", "Casos de Uso", "Classes", "ASD"],
@@ -251,7 +251,7 @@ export const module3 = {
       items: [
         "Autores: **Highsmith e Bayer** (2000); raízes no **RAD**; signatário do Manifesto (2001).",
         "Substitui *planejar* por **especular** (plano = hipótese).",
-        "Base: **CAS** — não linearidade, comportamento emergente, adaptabilidade, **limite do caos**.",
+        "Base: **CAS** (não linearidade, comportamento emergente, adaptabilidade, limite do caos).",
         "Ciclo: **Especular → Colaborar → Aprender**.",
         "Caso: Auto Mecânica (PHP/MySQL → triggers/views → demo x produção).",
       ],
@@ -278,7 +278,7 @@ export const module3 = {
     B1 -.-> C1`,
     },
     {
-      title: "Lean — fluxo de valor",
+      title: "Lean: fluxo de valor",
       description: "Da necessidade do cliente à entrega.",
       code: `flowchart TB
     V[Valor] --> M[Mapear fluxo]
@@ -393,7 +393,7 @@ export const module3 = {
       {
         q: "Explique o modelo de ASD e seu ciclo triplo, relacionando com a ideia de \"limite do caos\".",
         answer:
-          "ASD assume que o software é um Sistema Adaptativo Complexo, operando no \"limite do caos\" — entre a ordem rígida e o caos total — onde a mudança é constante. Seu ciclo triplo: Especular (definir missões/hipóteses em timeboxes, reconhecendo a incerteza), Colaborar (decisão conjunta, pessoas no centro) e Aprender (revisões críticas e ajuste contínuo).",
+          "ASD assume que o software é um Sistema Adaptativo Complexo, operando no \"limite do caos\", entre a ordem rígida e o caos total, onde a mudança é constante. Seu ciclo triplo: Especular (definir missões/hipóteses em timeboxes, reconhecendo a incerteza), Colaborar (decisão conjunta, pessoas no centro) e Aprender (revisões críticas e ajuste contínuo).",
         topics: [
           "Base em CAS e limite do caos.",
           "Especular, Colaborar, Aprender.",
@@ -413,7 +413,7 @@ export const module3 = {
       {
         q: "Liste os 5 princípios Lean e explique dois desperdícios a eliminar.",
         answer:
-          "Princípios: Valor, Mapeamento do fluxo de valor, Fluxo contínuo, Produção puxada e Melhoria contínua (Kaizen). Dois desperdícios: **Espera** — tempo parado por dependências ou gargalos, que atrasa a entrega sem agregar valor; e **Defeitos** — erros que geram retrabalho e consomem esforço sem valor percebido. Ambos devem ser identificados e eliminados para aumentar o fluxo.",
+          "Princípios: Valor, Mapeamento do fluxo de valor, Fluxo contínuo, Produção puxada e Melhoria contínua (Kaizen). Dois desperdícios: **Espera**: tempo parado por dependências ou gargalos, que atrasa a entrega sem agregar valor. **Defeitos**: erros que geram retrabalho e consomem esforço sem valor percebido. Ambos devem ser identificados e eliminados para aumentar o fluxo.",
         topics: [
           "Cinco princípios enumerados.",
           "Dois desperdícios explicados.",
