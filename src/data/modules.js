@@ -19,7 +19,7 @@ export const examTips = [
   },
   {
     title: "Memorize as siglas",
-    body: "MoSCoW (DSDM), WIP/pull (Kanban), TDD/pair/refatoração/CI (XP), Especular-Colaborar-Aprender (ASD).",
+    body: "MoSCoW (DSDM), WIP/pull (Kanban), TDD/pair/refatoração/CI (XP), Especular-Colaborar-Aprender (ASD), cores do Crystal (Clear → Yellow → Orange → Red).",
   },
   {
     title: "Justifique sempre com exemplo",

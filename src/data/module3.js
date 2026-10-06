@@ -2,7 +2,7 @@ export const module3 = {
   id: "modulo-3",
   short: "M3",
   title: "Metodologias Ágeis e Lean",
-  subtitle: "DSDM, Kanban, Lean, XP e ASD",
+  subtitle: "DSDM, Kanban, Lean, XP, ASD e Crystal",
   emoji: "⚙️",
   icon: "mdi:sync-circle",
   summary:
@@ -17,6 +17,7 @@ export const module3 = {
         "**WIP** e sistema **puxado (pull)** do Kanban.",
         "Práticas do **XP** e seus limites (>12 pessoas, cliente on-site).",
         "**Ciclo triplo do ASD**: Especular → Colaborar → Aprender.",
+        "**Cores do Crystal** por tamanho do time e a **comunicação osmótica**.",
         "Os **4 valores** e os **12 princípios** do Manifesto Ágil.",
       ],
     },
@@ -199,7 +200,70 @@ export const module3 = {
       text: "O problema não invalidou a solução: o ciclo **Aprender** revelou que a escolha de infraestrutura deve ser validada conforme o ambiente. É a lógica do ASD: adaptar a direção a partir do aprendizado.",
     },
 
-    { type: "h2", text: "6. Quadro comparativo: UML x ASD" },
+    { type: "h2", text: "6. Metodologia Crystal (agilidade com foco nas pessoas)" },
+    { type: "h3", text: "Conceito e origem" },
+    {
+      type: "p",
+      text: "Criada por **Alistair Cockburn** na década de 1990, a Crystal é uma **família de abordagens ágeis**. Parte de uma ideia simples: cada projeto é único. Em vez de impor um processo fixo, ela ajusta o rigor ao **tamanho do time**, à **complexidade** e à **criticidade** do sistema, colocando o talento humano e a comunicação acima da burocracia.",
+    },
+    {
+      type: "callout",
+      variant: "info",
+      title: "Pessoas em primeiro lugar",
+      text: "A Crystal trata o time como o centro do sucesso. As pessoas precisam de autonomia para propor, perguntar e errar sem medo de punição.",
+    },
+    { type: "h3", text: "A família de cores (peso do processo)" },
+    {
+      type: "p",
+      text: "As cores indicam o peso do processo. Quanto mais escura a cor, mais estruturado e documentado o projeto deve ser.",
+    },
+    {
+      type: "table",
+      headers: ["Cor", "Tamanho", "Características"],
+      rows: [
+        ["**Crystal Clear**", "1 a 6 pessoas", "Ultra-leve, baixa documentação, **comunicação osmótica** e entregas frequentes."],
+        ["**Crystal Yellow**", "7 a 20 pessoas", "Propriedade de código (*code ownership*), testes automatizados e integração contínua."],
+        ["**Crystal Orange**", "21 a 50 pessoas", "Subtimes por funcionalidade, papéis especialistas (arquiteto, designer, testador) e releases de 3 a 4 meses."],
+        ["**Crystal Orange Web**", "21 a 50 pessoas", "Variação para a web, com deploy contínuo e ciclos curtos."],
+        ["**Crystal Red**", "50 a 80 pessoas", "Auditorias de segurança, revisões formais de código e reuniões estruturadas de integração."],
+        ["**Maroon / Blue / Sapphire**", "80 a centenas", "Sistemas críticos (bancos, aviação, saúde), com rastreabilidade e *compliance* rigorosos."],
+      ],
+    },
+    {
+      type: "mermaid",
+      caption: "Família Crystal: quanto mais escura a cor, maior o rigor do processo.",
+      code: `flowchart TB
+    C1["Crystal Clear<br/>1 a 6 pessoas<br/>Comunicação osmótica"] --> C2["Crystal Yellow<br/>7 a 20<br/>Code ownership + CI"]
+    C2 --> C3["Crystal Orange<br/>21 a 50<br/>Subtimes e especialistas"]
+    C3 --> C4["Crystal Red<br/>50 a 80<br/>Auditorias e revisões"]
+    C4 --> C5["Maroon / Blue / Sapphire<br/>80 ou mais<br/>Crítico e compliance"]`,
+    },
+    { type: "h3", text: "Características e valores" },
+    {
+      type: "ul",
+      items: [
+        "**Comunicação osmótica:** a informação é absorvida naturalmente pela proximidade dos membros, na mesma sala ou em um canal aberto.",
+        "**Segurança pessoal:** ambiente onde é possível errar, perguntar e discordar sem punição.",
+        "**Melhoria reflexiva:** reuniões periódicas para ajustar o próprio processo de trabalho.",
+        "**Entregas frequentes:** validação de software funcional em ciclos curtos.",
+      ],
+    },
+    { type: "h3", text: "Pontos fortes e limitações" },
+    {
+      type: "keyvals",
+      items: [
+        { k: "Pontos fortes", v: "Baixo custo financeiro (sem licenças ou certificações obrigatórias), flexibilidade e foco no valor humano." },
+        { k: "Limitações", v: "Exige maturidade técnica e de liderança. A comunicação osmótica enfraquece no trabalho remoto sem cultura digital forte, e o modelo conflita com governança corporativa tradicional." },
+      ],
+    },
+    {
+      type: "callout",
+      variant: "tip",
+      title: "No projeto integrador",
+      text: "A Crystal ajuda a dimensionar escopo e tempo conforme o tamanho real do time e o conhecimento disponível, o que reduz o risco de atrasos na entrega.",
+    },
+
+    { type: "h2", text: "7. Quadro comparativo: UML x ASD" },
     {
       type: "table",
       headers: ["Dimensão", "Casos de Uso", "Classes", "ASD"],
@@ -256,6 +320,17 @@ export const module3 = {
         "Caso: Auto Mecânica (PHP/MySQL → triggers/views → demo x produção).",
       ],
     },
+    {
+      title: "Crystal",
+      items: [
+        "Autor: **Alistair Cockburn** (anos 1990).",
+        "Princípio: cada projeto é único; o processo se adapta ao tamanho e à criticidade.",
+        "Cores por peso: **Clear** (1-6) → **Yellow** (7-20) → **Orange** (21-50) → **Red** (50-80) → **Maroon/Blue/Sapphire** (80+).",
+        "**Comunicação osmótica:** informação absorvida pela proximidade.",
+        "**Segurança pessoal** e **melhoria reflexiva**.",
+        "Sem licenças pagas; exige maturidade; sofre no trabalho remoto.",
+      ],
+    },
   ],
 
   diagrams: [
@@ -291,6 +366,15 @@ export const module3 = {
       description: "TDD e integração contínua.",
       code: `flowchart TB
     T[Teste RED] --> C[Código GREEN] --> R[Refatoração] --> I[Integração contínua] --> T`,
+    },
+    {
+      title: "Família Crystal",
+      description: "Cores por tamanho do time e rigor do processo.",
+      code: `flowchart TB
+    Clear["Crystal Clear<br/>1 a 6"] --> Yellow["Crystal Yellow<br/>7 a 20"]
+    Yellow --> Orange["Crystal Orange<br/>21 a 50"]
+    Orange --> Red["Crystal Red<br/>50 a 80"]
+    Red --> Maroon["Maroon / Blue / Sapphire<br/>80 ou mais"]`,
     },
   ],
 
@@ -358,6 +442,30 @@ export const module3 = {
         explain:
           "São os **4 valores** do Manifesto (2001): itens da esquerda valem mais, sem descartar os da direita.",
       },
+      {
+        q: "Sobre as cores da família Crystal, é correto afirmar que:",
+        options: [
+          "Clear atende times grandes e Orange atende times pequenos.",
+          "Quanto mais escura a cor, maior o rigor e a documentação exigidos.",
+          "Todas as cores usam o mesmo processo, mudando apenas o nome.",
+          "Maroon, Blue e Sapphire são aplicadas a equipes de 1 a 6 pessoas.",
+        ],
+        answer: 1,
+        explain:
+          "A cor indica o peso do processo. **Clear** atende 1 a 6 pessoas com baixa documentação; **Orange** atende 21 a 50, com subtimes, especialistas e releases de 3 a 4 meses. Sistemas críticos usam **Maroon/Blue/Sapphire**.",
+      },
+      {
+        q: "O conceito de comunicação osmótica no Crystal Clear significa que a equipe:",
+        options: [
+          "troca informações por documentos formais e atas de reunião.",
+          "absorve informação naturalmente por estar na mesma sala ou canal aberto.",
+          "depende de um gerente para repassar cada informação.",
+          "usa apenas ferramentas assíncronas de gestão.",
+        ],
+        answer: 1,
+        explain:
+          "A **comunicação osmótica** é a absorção natural de informação pela proximidade dos membros, sem depender de documentos formais. É um pilar do Crystal Clear e explica a dificuldade do modelo no trabalho remoto.",
+      },
     ],
     discursive: [
       {
@@ -418,6 +526,16 @@ export const module3 = {
           "Cinco princípios enumerados.",
           "Dois desperdícios explicados.",
           "Relação com valor e fluxo.",
+        ],
+      },
+      {
+        q: "Diferencie Crystal Clear de Crystal Orange e explique o conceito de comunicação osmótica.",
+        answer:
+          "Crystal Clear é a abordagem mais leve, indicada para times de 1 a 6 pessoas, com baixa documentação, comunicação osmótica e entregas frequentes. Crystal Orange atende times de 21 a 50 pessoas, divididos em subtimes por funcionalidade, com papéis especialistas (arquiteto, designer, testador) e releases de 3 a 4 meses. A comunicação osmótica é a absorção natural de informação pela proximidade dos membros, na mesma sala ou em um canal aberto. Ela funciona bem em times pequenos e presenciais e enfraquece no trabalho remoto sem uma cultura digital forte.",
+        topics: [
+          "Tamanho e características de Clear e de Orange.",
+          "Definição de comunicação osmótica.",
+          "Relação entre proximidade e tamanho do time.",
         ],
       },
     ],

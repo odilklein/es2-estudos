@@ -22,6 +22,8 @@ const quickRef = [
   ["TDD / Par / CI", "M3", "Práticas do XP (Kent Beck)."],
   ["CAS + limite do caos", "M3", "Base teórica do ASD (Highsmith e Bayer)."],
   ["Especular-Colaborar-Aprender", "M3", "Ciclo tríplice do ASD."],
+  ["Crystal (Cockburn)", "M3", "Família de cores por tamanho do time: Clear (1-6) até Sapphire (80+)."],
+  ["Comunicação osmótica", "M3", "Informação absorvida pela proximidade no Crystal Clear."],
 ];
 
 const moduleColors = {
