@@ -111,8 +111,8 @@ export default function Home() {
               <Icon icon="mdi:headphones" width={24} />
             </span>
             <div>
-              <h2 className="text-lg font-bold text-slate-900">Podcast: por que todo software precisa de UML</h2>
-              <p className="text-sm text-slate-600">Áudio de cerca de 28 min com controle de velocidade.</p>
+              <h2 className="text-lg font-bold text-slate-900">Podcasts de revisão</h2>
+              <p className="text-sm text-slate-600">5 episódios de áudio com player no rodapé e retomada.</p>
             </div>
           </div>
           <span className="flex items-center gap-1 text-sm font-semibold text-brand-600">

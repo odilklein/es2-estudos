@@ -19,12 +19,22 @@ export default function MiniPlayer() {
     rate,
     setRate,
     stop,
+    next,
+    prev,
+    setSavedPosition,
   } = useAudio();
 
   const [current, setCurrent] = useState(0);
   const [duration, setDuration] = useState(0);
-  const restoredRef = useRef(false);
+  const [displayTrackId, setDisplayTrackId] = useState(track.id);
+  const restoredForRef = useRef(null);
   const lastSaveRef = useRef(0);
+
+  if (displayTrackId !== track.id) {
+    setDisplayTrackId(track.id);
+    setCurrent(0);
+    setDuration(0);
+  }
 
   function persist(audio, overrides = {}) {
     if (!audio) return;
@@ -39,23 +49,22 @@ export default function MiniPlayer() {
   function handleLoadedMetaData(e) {
     const audio = e.target;
     setDuration(audio.duration || 0);
-    if (restoredRef.current) return;
-    restoredRef.current = true;
+    if (restoredForRef.current === track.id) return;
+    restoredForRef.current = track.id;
 
     const saved = loadProgress(track.id);
-    if (!saved) return;
-    if (saved.rate) {
-      audio.playbackRate = saved.rate;
-      setRate(saved.rate);
-    }
-    if (saved.volume != null) audio.volume = saved.volume;
+    const savedRate = saved?.rate || rate;
+    audio.playbackRate = savedRate;
+    setRate(savedRate);
+    if (saved?.volume != null) audio.volume = saved.volume;
 
-    const pos = saved.position || 0;
+    const pos = saved?.position || 0;
     const total = audio.duration || 0;
     if (pos > 5 && (!total || pos < total - 15)) {
       audio.currentTime = pos;
       setCurrent(pos);
     }
+    setSavedPosition(pos);
   }
 
   function handleListen(e) {
@@ -71,7 +80,7 @@ export default function MiniPlayer() {
   useEffect(() => {
     function saveNow() {
       const audio = playerRef.current?.audio?.current;
-      if (audio) persist(audio);
+      if (audio && !audio.ended && audio.currentTime > 0) persist(audio);
     }
     window.addEventListener("pagehide", saveNow);
     document.addEventListener("visibilitychange", saveNow);
@@ -110,15 +119,10 @@ export default function MiniPlayer() {
 
             <div className="min-w-0 flex-1">
               <p className="truncate text-sm font-semibold text-slate-800">{track.title}</p>
-              <p className="text-xs text-slate-500">
-                {formatTime(current)} / {formatTime(duration)}
+              <p className="truncate text-xs text-slate-500">
+                {track.subtitle} · {formatTime(current)} / {formatTime(duration)}
               </p>
             </div>
-
-            <span className="hidden items-center gap-1 text-[11px] font-semibold text-slate-400 sm:flex">
-              <Icon icon="mdi:headphones" width={14} />
-              {track.subtitle}
-            </span>
 
             <button
               onClick={() => setCollapsed((c) => !c)}
@@ -148,11 +152,14 @@ export default function MiniPlayer() {
               ref={playerRef}
               src={track.src}
               preload="metadata"
-              showSkipControls={false}
+              autoPlayAfterSrcChange
+              showSkipControls
               showJumpControls
               showFilledVolume={false}
               hasDefaultKeyBindings
               listenInterval={1000}
+              onClickPrevious={prev}
+              onClickNext={next}
               onListen={handleListen}
               onLoadedMetaData={handleLoadedMetaData}
               onPlay={() => setPlaying(true)}
@@ -168,6 +175,7 @@ export default function MiniPlayer() {
                 setPlaying(false);
                 setCurrent(0);
                 persist(e.target, { position: 0 });
+                next();
               }}
             />
 

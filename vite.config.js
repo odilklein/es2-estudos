@@ -52,7 +52,7 @@ export default defineConfig({
             options: {
               cacheName: 'podcast-audio',
               rangeRequests: true,
-              expiration: { maxEntries: 3, maxAgeSeconds: 60 * 60 * 24 * 30 },
+              expiration: { maxEntries: 8, maxAgeSeconds: 60 * 60 * 24 * 30 },
               cacheableResponse: { statuses: [0, 200, 206] },
             },
           },

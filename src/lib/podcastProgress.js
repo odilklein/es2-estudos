@@ -1,4 +1,5 @@
 const KEY = "es2-podcast-progress";
+const LAST_KEY = "es2-podcast-last";
 
 function readAll() {
   try {
@@ -28,6 +29,22 @@ export function clearProgress(id) {
     const all = readAll();
     delete all[id];
     localStorage.setItem(KEY, JSON.stringify(all));
+  } catch {
+    /* localStorage indisponível */
+  }
+}
+
+export function loadLastTrackId() {
+  try {
+    return localStorage.getItem(LAST_KEY) || null;
+  } catch {
+    return null;
+  }
+}
+
+export function saveLastTrackId(id) {
+  try {
+    localStorage.setItem(LAST_KEY, id);
   } catch {
     /* localStorage indisponível */
   }
