@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    @apply bg-slate-50 text-slate-800 antialiased;
+    -webkit-tap-highlight-color: transparent;
+  }
+  /* Comfortable reading rhythm on small screens */
+  p,
+  li {
+    line-height: 1.75;
+  }
+}
+
+@layer components {
+  .card {
+    @apply rounded-2xl border border-slate-200 bg-white p-5 shadow-soft sm:p-6;
+  }
+  .section-title {
+    @apply text-xl font-bold text-slate-900 sm:text-2xl;
+  }
+  .prose-es h2 {
+    @apply mt-10 mb-3 text-xl font-bold text-slate-900 sm:text-2xl;
+  }
+  .prose-es h3 {
+    @apply mt-6 mb-2 text-base font-semibold text-brand-700 sm:text-lg;
+  }
+  .prose-es p {
+    @apply my-3 leading-relaxed text-slate-700;
+  }
+  .prose-es ul {
+    @apply my-3 list-disc space-y-1.5 pl-5 text-slate-700;
+  }
+  .prose-es ol {
+    @apply my-3 list-decimal space-y-1.5 pl-5 text-slate-700;
+  }
+  .prose-es strong {
+    @apply font-semibold text-slate-900;
+  }
+  .prose-es code {
+    @apply rounded bg-slate-100 px-1.5 py-0.5 font-mono text-[0.85em] text-brand-700;
+  }
+}
+
+/* Subtle, unobtrusive scrollbars */
+.soft-scroll::-webkit-scrollbar {
+  height: 8px;
+  width: 8px;
+}
+.soft-scroll::-webkit-scrollbar-thumb {
+  background: theme("colors.slate.300");
+  border-radius: 9999px;
+}
+.soft-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Mermaid diagrams: natural size, pannable on touch devices */
+.diagram-viewport {
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-x pan-y;
+}
+.diagram-svg svg {
+  display: block;
+  height: auto;
+  max-width: none;
+}
