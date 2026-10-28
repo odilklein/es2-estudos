@@ -1,9 +1,9 @@
 import { createContext, useContext } from "react";
-import uml from "../../Por_que_todo_software_precisa_de_UML.m4a";
-import caos from "../../Do_caos_ao_código_com_diagramas_UML.m4a";
-import controle from "../../Controle_ou_adaptação_na_engenharia_de_software.m4a";
-import xpTimebox from "../../XP,_Timebox_e_UML_sem_decoreba.m4a";
-import bpmn from "../../BPMN_para_reembolso_de_despesas.m4a";
+import uml from "../assets/audio/Por_que_todo_software_precisa_de_UML.m4a";
+import caos from "../assets/audio/Do_caos_ao_código_com_diagramas_UML.m4a";
+import controle from "../assets/audio/Controle_ou_adaptação_na_engenharia_de_software.m4a";
+import xpTimebox from "../assets/audio/XP,_Timebox_e_UML_sem_decoreba.m4a";
+import bpmn from "../assets/audio/BPMN_para_reembolso_de_despesas.m4a";
 
 export const EPISODES = [
   {

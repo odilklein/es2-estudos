@@ -1,7 +1,10 @@
 {
-  "name": "site",
+  "name": "es2-estudos",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "description": "Plataforma de estudos de Engenharia de Software 2: teoria, diagramas, simulado e podcast. PWA que funciona offline.",
+  "license": "MIT",
+  "author": "odilklein",
   "type": "module",
   "scripts": {
     "dev": "vite",
